@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<header class="masthead">
+    {% for object in object_list %}
+    <div class="container">
+        <div class="masthead-subheading">{{object.title}}</div>
+        <div class="masthead-heading text-uppercase">{{object.sub_title}}</div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'service:service' %}">{{object.home_link_name}}</a>
+    </div>
+    {% endfor %}
+</header>
+
+{% endblock %}
